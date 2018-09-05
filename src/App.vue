@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" class="logo">
+    <ScoreBoard msg="Vue ScoreBoard"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ScoreBoard from './components/ScoreBoard.vue'
+import ScoreCounter from './components/ScoreCounter.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    ScoreBoard,
+    ScoreCounter
   }
 }
 </script>
@@ -25,4 +28,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.logo {
+  animation: logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 </style>
