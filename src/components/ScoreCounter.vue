@@ -2,10 +2,10 @@
   <div class="teamScore">
     <h3>{{teamDisplayName}}</h3>
     <p>{{teamDisplayScore}}</p>
-    <input class="updateTeamName" placeholder="Update Name" v-model="teamName">
-    <div>
-      <button class="updateTeamName" v-on:click="updateName">Update</button>
-    </div>
+    <form v-on:submit.prevent="updateName">
+      <input class="updateTeamName" placeholder="Update Name" v-model="teamName">
+
+    </form>
     <div class="">
       <button class="updateScore" v-on:click="addOne">Add 1</button>
       <button class="updateScore" v-on:click="subtractOne">Subtract 1</button>
@@ -29,6 +29,7 @@ export default {
   methods: {
     updateName: function() {
       this.teamDisplayName = this.teamName;
+      this.teamName = ""
     },
     addOne: function() {
       this.teamDisplayScore++;
