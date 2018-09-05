@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div class="teamScore">
     <h3>{{teamDisplayName}}</h3>
     <p>{{teamDisplayScore}}</p>
+    <input class="updateTeamName" placeholder="Update Name" v-model="teamName">
     <div>
-      <input placeholder="Update Team Name" id="teamInput" type="text" v-model="teamName">
-      <button type="Update" name="button" id="updateNameButton" v-on:click="updateName">Update</button>
+      <button class="updateTeamName" v-on:click="updateName">Update</button>
     </div>
     <div class="">
-      <span>Update Score</span>
-      <button type="button" name="button" v-on:click="addOne">Add 1</button>
-      <button type="button" name="button" v-on:click="subtractOne">Subtract 1</button>
+      <button class="updateScore" v-on:click="addOne">Add 1</button>
+      <button class="updateScore" v-on:click="subtractOne">Subtract 1</button>
     </div>
   </div>
 </template>
@@ -24,7 +23,7 @@ export default {
     return {
       teamName: "",
       teamDisplayName: "Team",
-      teamDisplayScore: 0,
+      teamDisplayScore: 0
     };
   },
   methods: {
@@ -43,5 +42,20 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style scoped>
+.teamScore {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.updateTeamName {
+  font-size: 10px;
+  text-align: center;
+}
+
+.updateScore {
+  font-size: 10px;
+}
 </style>
